@@ -50,19 +50,21 @@ def loss(true_output, predicted_output):
 # Adding a classic activation function: The sigmoid
 
 def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
+    z = 1 / (1 + np.exp(-x))
+    return z
 
 def sigmoid_derivative(x):
-    return np.exp(-x) / (1 + np.exp(-x))**2
+    zd = np.exp(-x) / (1 + np.exp(-x))**2
+    return zd
 
 
 # Testing it on a XNOR gate
 
-xinput = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
-true_output = np.array([[1], [0],[0], [1]])
+x = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y = np.array([[1], [0], [0], [1]])
 
 # Initialization
-nn = SimpleNeuralNetwork(xinput, true_output)
+nn = SimpleNeuralNetwork(x, y)
 n = 1500
 losslist = []
 
